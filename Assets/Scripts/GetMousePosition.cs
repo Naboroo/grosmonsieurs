@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GetMousePosition : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Vector3 OnKey(KeyCode kc){
+        Ray ray;
+        RaycastHit hitInfo;
+        Vector3 hitPos=Vector3.zero;
+        if (Input.GetKeyDown(kc)){
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hitInfo)){
+                hitPos=hitInfo.point;
+                Debug.Log(hitInfo.point);
+            }
+        }
+        return hitPos;
     }
 }
