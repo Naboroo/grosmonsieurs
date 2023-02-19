@@ -15,6 +15,7 @@ Le but c'est de faire un bootleg de LoL où on a retiré toutes mes frustrations
 - Pas de blagues
 - Pas de game qui dure 40 minutes
 - Pas de ban si tu quittes en pleine game mdr
+- Pas de bodyblock
 
 Donc en gros un bon jeu :^)
 
