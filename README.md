@@ -3,7 +3,7 @@ Gros monsieurs qui se tapent dessus (bootleg de LoL)
 
 -- C'EST QUOI GROS MONSIEURS? --
 
-Le but c'est de faire un bootleg de LoL où on a retiré toutes nos frustrations dans le jeu:
+Le but c'est de faire un bootleg de LoL où on a retiré toutes mes frustrations dans le jeu:
 
 - Pas de distance, que des CàC
 - Pas de mages
@@ -15,7 +15,8 @@ Le but c'est de faire un bootleg de LoL où on a retiré toutes nos frustrations
 - Pas de blagues
 - Pas de game qui dure 40 minutes
 - Pas de ban si tu quittes en pleine game mdr
+- Pas de bodyblock
 
 Donc en gros un bon jeu :^)
 
-Nous n'avons aucune affilitation avec Riot Games.
+Je n'ai aucune affilitation avec Riot Games.
