@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent myAgent;
     void Start(){
         myAgent=GetComponent<NavMeshAgent>();
-        CameraManager.instance.transform.position = new Vector3(gameObject.transform.position.x+cameraOffset.x, gameObject.transform.position.y+cameraOffset.y, gameObject.transform.position.z+cameraOffset.z);
+        CameraManager.instance.transform.position = new Vector3(transform.position.x+cameraOffset.x, transform.position.y+cameraOffset.y, transform.position.z+cameraOffset.z);
     }
     void Update()
     {
@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour
         {
             CameraManager.instance.transform.position += new Vector3(Input.mousePosition.x - Screen.width/2, 0, Input.mousePosition.y - Screen.height / 2).normalized * cameraSpeed * Time.deltaTime;
         }
+
+        //Space to move camera back to base position
         if (Input.GetKey(KeyCode.Space)){
-            CameraManager.instance.transform.position = new Vector3(gameObject.transform.position.x+cameraOffset.x, gameObject.transform.position.y+cameraOffset.y, gameObject.transform.position.z+cameraOffset.z);
+            CameraManager.instance.transform.position = new Vector3(transform.position.x+cameraOffset.x, transform.position.y+cameraOffset.y, transform.position.z+cameraOffset.z);
         }
 
-
         if(Input.GetMouseButton(1)){
-
-            if (CameraManager.instance.GetObject(Input.mousePosition).transform.gameObject.tag!="Ground"){ //DO NOT FORGET TO TAG GROUND OBJECTS
-                Debug.Log("Object:" + CameraManager.instance.GetObject(Input.mousePosition).transform.name);
+            if (CameraManager.instance.GetObject(Input.mousePosition).transform.gameObject.GetComponent<ObjectBehaviour>()){
+                Debug.Log("Name:" + CameraManager.instance.GetObject(Input.mousePosition).transform.name + "| Type:" + CameraManager.instance.GetObject(Input.mousePosition).GetComponent<ObjectBehaviour>().ToString());
             } else {
                 if (CameraManager.instance.GetWorldPoint(Input.mousePosition, out Vector3 clickPos)) {
                     myAgent.SetDestination(clickPos);
