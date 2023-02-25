@@ -8,9 +8,9 @@ public class AgentController : MonoBehaviour
     [HideInInspector]
     public AgentStats agentStatsInstance;
     void Awake(){
-        InstantiateStats();
+        InstantiateAgentStats();
     }
-    void InstantiateStats()
+    void InstantiateAgentStats()
     {
         agentStatsInstance = new AgentStats(baseStats);
     }

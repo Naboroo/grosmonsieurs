@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public static CameraManager instance;
+    public static CameraManager cameraInstance;
     private Camera _cam;
     public GameObject playerObject;
     //Camera parameters
@@ -14,11 +14,11 @@ public class CameraManager : MonoBehaviour
     public Vector3 cameraOffset;
     void Awake()
     {
-        instance = this;
+        cameraInstance = this;
         _cam = GetComponent<Camera>();
         
         //Camera moves to center
-        instance.transform.position = new Vector3(playerObject.transform.position.x + cameraOffset.x, playerObject.transform.position.y + cameraOffset.y, playerObject.transform.position.z + cameraOffset.z);
+        cameraInstance.transform.position = new Vector3(playerObject.transform.position.x + cameraOffset.x, playerObject.transform.position.y + cameraOffset.y, playerObject.transform.position.z + cameraOffset.z);
 
     }
     void Update()
@@ -26,12 +26,12 @@ public class CameraManager : MonoBehaviour
         //Camera movement: camera moves when cursor on border + camera goes back to initial pos
         if (Mathf.Abs(Input.mousePosition.x - Screen.width / 2) >= Screen.width / 2 * cameraMoveTreshold || Mathf.Abs(Input.mousePosition.y - Screen.height / 2) >= Screen.height / 2 * cameraMoveTreshold)
         {
-            instance.transform.position += new Vector3(Input.mousePosition.x - Screen.width / 2, 0, Input.mousePosition.y - Screen.height / 2).normalized * cameraSpeed * Time.deltaTime;
+            cameraInstance.transform.position += new Vector3(Input.mousePosition.x - Screen.width / 2, 0, Input.mousePosition.y - Screen.height / 2).normalized * cameraSpeed * Time.deltaTime;
         }
         //Space to move camera back to base position
         if (Input.GetKey(KeyCode.Space))
         {
-            instance.transform.position = new Vector3(playerObject.transform.position.x + cameraOffset.x, playerObject.transform.position.y + cameraOffset.y, playerObject.transform.position.z + cameraOffset.z);
+            cameraInstance.transform.position = new Vector3(playerObject.transform.position.x + cameraOffset.x, playerObject.transform.position.y + cameraOffset.y, playerObject.transform.position.z + cameraOffset.z);
         }
     }
 

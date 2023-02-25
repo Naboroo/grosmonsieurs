@@ -11,6 +11,7 @@ public class AgentStats
     public float attackSpeed;
     public float cdr;
     public float moveSpeed;
+    public float angularSpeed;
     public float goldReward;
     public float xpReward;
     public float mana;
@@ -21,6 +22,7 @@ public class AgentStats
         attackSpeed=original.attackSpeed;
         cdr=original.cdr;
         moveSpeed=original.moveSpeed;
+        angularSpeed=original.angularSpeed;
         goldReward=original.goldReward;
         xpReward=original.goldReward;
         mana=original.mana;

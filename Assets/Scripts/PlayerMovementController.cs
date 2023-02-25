@@ -9,19 +9,21 @@ public class PlayerMovementController : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     [SerializeField]
     private PlayerController playerController;
-    void Awake()
+    void Start()
     {
+        //Temporary way of giving speed stats to NavMeshAgent => problem: changing speed (i.e. with debuff) can't update live this way
         navMeshAgent.speed = playerController.agentStatsInstance.moveSpeed;
+        navMeshAgent.angularSpeed = playerController.agentStatsInstance.angularSpeed;
     }
     void Update()
     {
         if (Input.GetMouseButton(1))
         {
-            if (CameraManager.instance.GetObject(Input.mousePosition).transform.gameObject.GetComponent<ObjectBehaviour>())
+            if (CameraManager.cameraInstance.GetObject(Input.mousePosition).transform.gameObject.GetComponent<ObjectBehaviour>())
             {
-                Debug.Log("Name:" + CameraManager.instance.GetObject(Input.mousePosition).transform.name + "| Type:" + CameraManager.instance.GetObject(Input.mousePosition).GetComponent<ObjectBehaviour>().ToString());
+                Debug.Log("Name:" + CameraManager.cameraInstance.GetObject(Input.mousePosition).transform.name + " | Type:" + CameraManager.cameraInstance.GetObject(Input.mousePosition).GetComponent<ObjectBehaviour>().ToString());
             }
-            else if (CameraManager.instance.GetWorldPoint(Input.mousePosition, out Vector3 clickPos))
+            else if (CameraManager.cameraInstance.GetWorldPoint(Input.mousePosition, out Vector3 clickPos))
             {
                 navMeshAgent.SetDestination(clickPos);
             }
