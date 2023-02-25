@@ -2,18 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : AgentStats
+[System.Serializable]
+public class PlayerStats
 {
-    public AgentStatsScriptableObject agentStats;
-    public float health;
-    public float moveSpeed;
-    public float baseDamage;
-    public float attackSpeed;
-    void Awake()
-    {
-        health = agentStats.health;
-        moveSpeed = agentStats.moveSpeed;
-        baseDamage = agentStats.baseDamage;
-        attackSpeed = agentStats.baseDamage;
-    }
+    public float tenacity;
 }

@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentStats : MonoBehaviour
+[System.Serializable]
+public class AgentStats
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public float health;
+    public float armor;
+    public float damage;
+    public float attackSpeed;
+    public float cdr;
+    public float moveSpeed;
+    public float goldReward;
+    public float xpReward;
+    public float mana;
+    public AgentStats (AgentStats original){
+        health=original.health;
+        armor=original.armor;
+        damage=original.damage;
+        attackSpeed=original.attackSpeed;
+        cdr=original.cdr;
+        moveSpeed=original.moveSpeed;
+        goldReward=original.goldReward;
+        xpReward=original.goldReward;
+        mana=original.mana;
     }
 }
