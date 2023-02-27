@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : SpellController
+public class Heal : SpellController
 {
     public KeyCode spellCommand;
     void Update(){
@@ -13,6 +13,5 @@ public class Fireball : SpellController
     {
         base.SpellEffect();
         //Add spell logic here
-        Debug.Log("Spell " + this.ToString() +" launched with command: "+ spellCommand);
     }
 }

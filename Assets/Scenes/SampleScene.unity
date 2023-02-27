@@ -123,61 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: da6efe5f3180f6344941733f730e98e4, type: 2}
---- !u!1 &30282365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 30282367}
-  - component: {fileID: 30282366}
-  m_Layer: 0
-  m_Name: Fireball
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &30282366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30282365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0bc656335157544487f78db88fe4b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseStats:
-    cooldown: 0
-    manaCost: 0
-    damage: 0
-    heal: 0
-  spellStatsInstance:
-    cooldown: 0
-    manaCost: 0
-    damage: 0
-    heal: 0
-  spellCommand: 0
---- !u!4 &30282367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30282365}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416183000
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020dc5dcdab23c45aa4d27bf45db9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStats:
+  baseAgentStats:
     health: 0
     armor: 0
     damage: 0
@@ -379,17 +324,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f24d6f0845076a4595962bc660058ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStats:
+  baseAgentStats:
     health: 1
     armor: 1
     damage: 1
     attackSpeed: 1
     cdr: 1
     moveSpeed: 8
-    angularSpeed: 120
+    angularSpeed: 8
     goldReward: 1
     xpReward: 1
-    mana: 0
+    mana: 1
   agentStatsInstance:
     health: 0
     armor: 0
@@ -401,8 +346,13 @@ MonoBehaviour:
     goldReward: 0
     xpReward: 0
     mana: 0
-  playerStats:
+  basePlayerStats:
+    tenacity: 1
+  playerStatsInstance:
     tenacity: 0
+  spells:
+  - {fileID: 4358988547309602312, guid: f18a1ec221c8ed24ebbb293517384fdf, type: 3}
+  - {fileID: -2016282179882595449, guid: 30e98706b976a8f468272379e394e37a, type: 3}
 --- !u!114 &559737608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +607,6 @@ GameObject:
   - component: {fileID: 1250436709}
   - component: {fileID: 1250436708}
   - component: {fileID: 1250436707}
-  - component: {fileID: 1250436710}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -743,18 +692,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250436705}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1250436710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250436705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba04fb01cf7f05042a7dffd3616a4718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1698659667
 GameObject:
   m_ObjectHideFlags: 0

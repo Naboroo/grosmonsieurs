@@ -21,7 +21,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             if (CameraManager.cameraInstance.GetObject(Input.mousePosition).transform.gameObject.GetComponent<ObjectBehaviour>())
             {
-                Debug.Log("Name:" + CameraManager.cameraInstance.GetObject(Input.mousePosition).transform.name + " | Type:" + CameraManager.cameraInstance.GetObject(Input.mousePosition).GetComponent<ObjectBehaviour>().ToString());
+                Debug.Log("Name:" + CameraManager.cameraInstance.GetObject(Input.mousePosition).transform.name);
             }
             else if (CameraManager.cameraInstance.GetWorldPoint(Input.mousePosition, out Vector3 clickPos))
             {

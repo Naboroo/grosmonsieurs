@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AgentController : MonoBehaviour
 {
-    public AgentStats baseStats;
-    [HideInInspector]
+    public AgentStats baseAgentStats;
+    //[HideInInspector]
     public AgentStats agentStatsInstance;
-    void Awake(){
+    protected virtual void Awake(){
         InstantiateAgentStats();
     }
     void InstantiateAgentStats()
     {
-        agentStatsInstance = new AgentStats(baseStats);
+        agentStatsInstance = new AgentStats(baseAgentStats);
     }
 }

@@ -6,4 +6,7 @@ using UnityEngine;
 public class PlayerStats
 {
     public float tenacity;
+    public PlayerStats (PlayerStats original){
+        tenacity=original.tenacity;
+    }
 }
