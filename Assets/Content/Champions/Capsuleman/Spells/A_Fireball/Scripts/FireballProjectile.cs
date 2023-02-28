@@ -6,18 +6,22 @@ public class FireballProjectile : MonoBehaviour
 {
     [HideInInspector]
     public Vector3 target;
-    [HideInInspector]
+    //[HideInInspector]
     public float range;
-    [HideInInspector]
+    //[HideInInspector]
     public float damage;
     public float moveSpeed;
+    private Vector3 startPosition;
+    void Start(){
+        startPosition = transform.position;
+    }
     void FixedUpdate()
     {
         if (target != null)
         {
-            float distanceToTarget = Vector3.Distance(transform.position, target);
+            float distanceToStart = Mathf.Abs(Vector3.Distance(transform.position, startPosition));
 
-            if (distanceToTarget > range)
+            if (distanceToStart < range && transform.position!=target)
             {
                 Vector3 moveDirection = (target - transform.position).normalized;
                 transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.fixedDeltaTime);
@@ -26,6 +30,14 @@ public class FireballProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }   
+        }
+    }
+    void OnTriggerEnter(Collider collider){
+        if(collider.gameObject.GetComponent<AgentController>()){
+            AgentController agentController=collider.gameObject.GetComponent<AgentController>();
+            agentController.ApplyDamage(damage);
+            Debug.Log("applied damage to " + collider.gameObject.name);
+            GameObject.Destroy(gameObject);
         }
     }
 }

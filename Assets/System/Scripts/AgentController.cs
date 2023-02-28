@@ -14,4 +14,7 @@ public class AgentController : MonoBehaviour
     {
         agentStatsInstance = new AgentStats(baseAgentStats);
     }
+    public void ApplyDamage(float receivedDamage){
+        agentStatsInstance.health -= (receivedDamage-agentStatsInstance.armor);
+    }
 }

@@ -16,5 +16,4 @@ public class PlayerController : AgentController
     {
         playerStatsInstance = new PlayerStats(basePlayerStats);
     }
-    
 }
